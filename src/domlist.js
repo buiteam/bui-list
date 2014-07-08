@@ -6,7 +6,8 @@
 
 'use strict';
 
-var BUI = require('bui-common'),
+var $ = require('jquery'),
+  BUI = require('bui-common'),
   Selection = BUI.Component.UIBase.Selection,
   FIELD_PREFIX = 'data-',
   List = BUI.Component.UIBase.List;

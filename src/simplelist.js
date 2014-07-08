@@ -9,7 +9,8 @@
  * @namespace 列表命名空间
  * @ignore
  */
-var BUI = require('bui-common'),
+var $ = require('jquery'),
+  BUI = require('bui-common'),
   UIBase = BUI.Component.UIBase,
   UA = BUI.UA,
   DomList = require('./domlist'),

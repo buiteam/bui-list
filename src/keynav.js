@@ -9,7 +9,8 @@
  * @class BUI.List.KeyNav
  * 列表导航扩展类
  */
-var  BUI = require('bui-common'),
+var $ = require('jquery'),
+  BUI = require('bui-common'),
   KeyNav = function(){};
 
 KeyNav.ATTRS = {

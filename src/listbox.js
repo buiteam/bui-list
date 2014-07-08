@@ -4,7 +4,8 @@
  * @ignore
  */
 
-var SimpleList = require('./simplelist');
+var $ = require('jquery'),
+  SimpleList = require('./simplelist');
 /**
  * 列表选择框
  * @extends BUI.List.SimpleList

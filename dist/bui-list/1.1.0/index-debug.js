@@ -1,4 +1,4 @@
-define("bui-list/1.1.0/index-debug", ["bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/list-debug", "bui-list/1.1.0/src/listitem-debug", "bui-list/1.1.0/src/simplelist-debug", "bui-list/1.1.0/src/listbox-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/index-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/list-debug", "bui-list/1.1.0/src/listitem-debug", "bui-list/1.1.0/src/simplelist-debug", "bui-list/1.1.0/src/listbox-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
   /**
    * @fileOverview 列表模块入口文件
    * @ignore
@@ -17,12 +17,13 @@ define("bui-list/1.1.0/index-debug", ["bui-common/1.1.0/common-debug", "bui-list
   });
   module.exports = List;
 });
-define("bui-list/1.1.0/src/list-debug", ["bui-common/1.1.0/common-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/list-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug"], function(require, exports, module) {
   /**
    * @fileOverview 列表
    * @ignore
    */
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     Component = BUI.Component,
     UIBase = Component.UIBase;
   /**
@@ -59,13 +60,14 @@ define("bui-list/1.1.0/src/list-debug", ["bui-common/1.1.0/common-debug"], funct
   });
   module.exports = list;
 });
-define("bui-list/1.1.0/src/listitem-debug", ["bui-common/1.1.0/common-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/listitem-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug"], function(require, exports, module) {
   /**
    * @fileOverview 列表项
    * @author dxq613@gmail.com
    * @ignore
    */
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     Component = BUI.Component,
     UIBase = Component.UIBase;
   /**
@@ -103,7 +105,7 @@ define("bui-list/1.1.0/src/listitem-debug", ["bui-common/1.1.0/common-debug"], f
   item.View = itemView;
   module.exports = item;
 });
-define("bui-list/1.1.0/src/simplelist-debug", ["bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/simplelist-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
   /**
    * @fileOverview 简单列表，直接使用DOM作为列表项
    * @ignore
@@ -113,7 +115,8 @@ define("bui-list/1.1.0/src/simplelist-debug", ["bui-common/1.1.0/common-debug", 
    * @namespace 列表命名空间
    * @ignore
    */
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     UIBase = BUI.Component.UIBase,
     UA = BUI.UA,
     DomList = require("bui-list/1.1.0/src/domlist-debug"),
@@ -369,13 +372,14 @@ define("bui-list/1.1.0/src/simplelist-debug", ["bui-common/1.1.0/common-debug", 
   simpleList.View = simpleListView;
   module.exports = simpleList;
 });
-define("bui-list/1.1.0/src/listbox-debug", ["bui-list/1.1.0/src/simplelist-debug", "bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/listbox-debug", ["jquery/1.9.1/jquery-debug", "bui-list/1.1.0/src/simplelist-debug", "bui-common/1.1.0/common-debug", "bui-list/1.1.0/src/domlist-debug", "bui-list/1.1.0/src/keynav-debug", "bui-list/1.1.0/src/sortable-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
   /**
    * @fileOverview 可选择的列表
    * @author dengbin
    * @ignore
    */
-  var SimpleList = require("bui-list/1.1.0/src/simplelist-debug");
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    SimpleList = require("bui-list/1.1.0/src/simplelist-debug");
   /**
    * 列表选择框
    * @extends BUI.List.SimpleList
@@ -417,14 +421,15 @@ define("bui-list/1.1.0/src/listbox-debug", ["bui-list/1.1.0/src/simplelist-debug
   });
   module.exports = listbox;
 });
-define("bui-list/1.1.0/src/domlist-debug", ["bui-common/1.1.0/common-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/domlist-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug"], function(require, exports, module) {
   /**
    * @fileOverview 使用DOM元素作为选项的扩展类
    * @author dxq613@gmail.com
    * @ignore
    */
   'use strict';
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     Selection = BUI.Component.UIBase.Selection,
     FIELD_PREFIX = 'data-',
     List = BUI.Component.UIBase.List;
@@ -1392,7 +1397,7 @@ define("bui-list/1.1.0/src/domlist-debug", ["bui-common/1.1.0/common-debug"], fu
   domList.View = domListView;
   module.exports = domList;
 });
-define("bui-list/1.1.0/src/keynav-debug", ["bui-common/1.1.0/common-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/keynav-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug"], function(require, exports, module) {
   /**
    * @fileOverview 列表选项，使用键盘导航
    * @author dxq613@gmail.com
@@ -1403,7 +1408,8 @@ define("bui-list/1.1.0/src/keynav-debug", ["bui-common/1.1.0/common-debug"], fun
    * @class BUI.List.KeyNav
    * 列表导航扩展类
    */
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     KeyNav = function() {};
   KeyNav.ATTRS = {
     /**
@@ -1648,12 +1654,13 @@ define("bui-list/1.1.0/src/keynav-debug", ["bui-common/1.1.0/common-debug"], fun
   });
   module.exports = KeyNav;
 });
-define("bui-list/1.1.0/src/sortable-debug", ["bui-common/1.1.0/common-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
+define("bui-list/1.1.0/src/sortable-debug", ["jquery/1.9.1/jquery-debug", "bui-common/1.1.0/common-debug", "bui-data/1.1.0/index-debug"], function(require, exports, module) {
   /**
    * @fileOverview 列表排序
    * @ignore
    */
-  var BUI = require("bui-common/1.1.0/common-debug"),
+  var $ = require("jquery/1.9.1/jquery-debug"),
+    BUI = require("bui-common/1.1.0/common-debug"),
     DataSortable = require("bui-data/1.1.0/index-debug").Sortable;
   /**
    * @class BUI.List.Sortable
