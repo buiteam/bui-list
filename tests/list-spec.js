@@ -4,6 +4,12 @@ var $ = require('jquery'),
   Data = require('bui-data'),
   List = require('../index');
 
+require('bui-dpl/css/bs3/dpl.css');
+require('bui-dpl/css/bs3/bui.css');
+
+
+$('<div class="row"><div  id="list1" class="span8"></div><div  id="list2" class="span8"></div><div  id="list3" class="span8"></div></div>').prependTo('body');
+
 describe('SimpleList', function(){
 
   var items = [{text:'选项1',value:'a'},{text:'选项2',value:'b'},{text:'选项3',value:'c'},{text:"数字值",value:3}],
@@ -257,6 +263,8 @@ describe('List', function(){
 });
 /**/
 
+$('<div class="row"><div  id="listCheck" class="span8"></div><div  id="lb1" class="span8"></div></div>').prependTo('body');
+
 describe('测试模板', function(){
 
   var items = [{id:123,text:'选项1',value:'a'},{id:234,tpl:'<span>{text}</span>',text:'选项2',value:'b'},
@@ -376,6 +384,13 @@ describe('列表操作', function(){
       $(element).trigger('dblclick');
       expect(callback.called).to.be(true);
       list.off('itemdblclick',callback);
+    });
+
+    it('测试右键',function(){
+      list.on('itemcontextmenu',function(ev){
+        console.log(ev);
+        return false;
+      });
     });
 
     it('测试点击',function(){
@@ -565,7 +580,7 @@ describe('Listbox', function(){
 describe('通过srcNode方式', function(){
 
   describe('list srcNode',function(){
-    var node = $('<section><ul><li class="item item-active" data-id="1">1</li><li  class="item" data-id="2">2</li><li  class="item" data-id="3">3</li><li class="item" data-id="4">4</li></ul></section>').prependTo('body'),
+    var node = $('<div><ul><li class="item item-active" data-id="1">1</li><li  class="item" data-id="2">2</li><li  class="item" data-id="3">3</li><li class="item" data-id="4">4</li></ul></div>').prependTo('body'),
       list = new List.SimpleList({
         srcNode : node,
         idField : 'id',

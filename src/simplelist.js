@@ -134,6 +134,22 @@ var  simpleList = BUI.Component.Controller.extend([DomList,UIBase.Bindable,KeyNa
     }
     
   },
+  handleContextMenu: function(ev) {
+    var _self = this,
+      target = ev.target,
+      itemCls = _self.get('itemCls'),
+      element = $(target).closest('.' + itemCls),
+      item = _self.getItemByElement(element);
+
+    var result = _self.fire('itemcontextmenu',{
+      element : element,
+      item : item,
+      domTarget : ev.target
+    });
+    if(result === false){
+      ev.preventDefault();
+    }
+  },
   /**
    * 删除
   * @protected
